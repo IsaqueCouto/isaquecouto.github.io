@@ -1,144 +1,487 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Isaque Couto Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Isaque Couto — Growth Operations &amp; AI Automation</title>
+<meta name="description" content="Isaque Couto — Head of IT at Instituto Senders, founder of AIA Solutions. Growth and revenue operations, AI automation, data. Native English and Portuguese, based in Brazil.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=" js";</script>
+<style>
+  :root{
+    --ink:#0b0d10;
+    --ink-2:#12151a;
+    --line:#242a33;
+    --line-soft:#1a1f26;
+    --cream:#efe9df;
+    --muted:#8d97a5;
+    --dim:#5d6672;
+    --amber:#ffab3d;
+    --live:#7dd88a;
+    --serif:"Instrument Serif",Georgia,serif;
+    --sans:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--ink); color:var(--cream);
+    font:400 16px/1.6 var(--sans);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Isaque Couto Portfolio<br />
-						</h1>
-						<p>Aspiring Data Analyst. Exepert Knowledge in Python,
-							Excel, Tableau, SQL and Power BI.<a href="https://www.linkedin.com/in/isaque-couto-1aa018250/"> @IsaqueCouto</a>.</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+  /* grain, for depth rather than flat black */
+  body::after{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:9; opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Isaque Couto</a>
-					</header>
+  .wrap{max-width:1040px; margin:0 auto; padding:0 28px;}
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Projects</a></li>
+  /* ---------- hero ---------- */
+  header.hero{
+    min-height:82vh; display:flex; flex-direction:column; justify-content:center;
+    padding:96px 0 64px; position:relative;
+    /* clips the glow below, which is deliberately wider than the column and
+       would otherwise extend the page's scroll width on narrow screens */
+    overflow:hidden;
+  }
+  header.hero::before{
+    content:""; position:absolute; top:-30%; right:-20%; width:760px; height:760px;
+    background:radial-gradient(circle, rgba(255,171,61,.11) 0%, transparent 62%);
+    pointer-events:none;
+  }
+  .eyebrow{
+    font:500 11.5px/1 var(--mono); letter-spacing:.22em; text-transform:uppercase;
+    color:var(--amber); margin-bottom:30px;
+  }
+  h1{
+    font:400 clamp(52px,10.5vw,116px)/0.94 var(--serif);
+    letter-spacing:-.02em; margin:0 0 26px; position:relative;
+  }
+  h1 em{font-style:italic; color:var(--amber);}
+  .lede{
+    font-size:clamp(17px,2.1vw,21px); line-height:1.55; color:var(--cream);
+    max-width:37ch; margin:0 0 34px;
+  }
+  .lede b{font-weight:600;}
+  .facts{
+    display:flex; flex-wrap:wrap; gap:9px 26px;
+    font:400 12.5px/1 var(--mono); color:var(--muted);
+  }
+  .facts span{white-space:nowrap;}
+  .facts span::before{content:"— "; color:var(--dim);}
 
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/isaque-couto-1aa018250/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-							<li><a href="https://github.com/IsaqueCouto" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+  /* ---------- sections ---------- */
+  section{padding:76px 0; border-top:1px solid var(--line-soft);}
+  .sec-head{display:flex; align-items:baseline; gap:18px; margin-bottom:44px; flex-wrap:wrap;}
+  .sec-num{font:500 11.5px/1 var(--mono); color:var(--amber); letter-spacing:.14em;}
+  .sec-head h2{
+    font:400 clamp(27px,4vw,40px)/1.1 var(--serif); margin:0; letter-spacing:-.01em;
+  }
+  .sec-head p{margin:0; color:var(--muted); font-size:14.5px; flex-basis:100%; max-width:56ch;}
 
-				<!-- Main -->
-					<div id="main">
+  /* ---------- featured (AIA) ---------- */
+  .featured{
+    border:1px solid var(--line); background:
+      linear-gradient(160deg, rgba(255,171,61,.055), transparent 58%), var(--ink-2);
+    padding:38px 34px; position:relative; overflow:hidden;
+  }
+  .featured::before{
+    content:""; position:absolute; left:0; top:0; bottom:0; width:2px; background:var(--amber);
+  }
+  .featured h3{
+    font:400 clamp(28px,4.6vw,42px)/1.05 var(--serif); margin:0 0 6px; letter-spacing:-.01em;
+  }
+  .featured .role{
+    font:500 11.5px/1 var(--mono); letter-spacing:.16em; text-transform:uppercase;
+    color:var(--amber); margin-bottom:20px;
+  }
+  .featured p{margin:0 0 26px; color:var(--cream); max-width:56ch; font-size:16.5px;}
 
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									
-									<h2><a href="https://github.com/IsaqueCouto/WebScrapping_Portual_Rent">Portugal Housing Rentals Project<br />
-									</a></h2>
-									<p>This project I wanted to see the current housing rental market in all of portugal using 
-										a very popular portuguese website imovirtual.com. From webscrapping the website using beautiful soups
-										to cleaning and organizing the data in both python and SQL. To then the final interactive presentation on Tableau.
-									</p>
-								</header>
-								<a href="https://github.com/IsaqueCouto/WebScrapping_Portual_Rent" class="image main"><img src="images/portugal.jpg" width="1000" height="500"alt="" /></a>
-								<ul class="actions special">
-									<li><a href="https://github.com/IsaqueCouto/WebScrapping_Portual_Rent" class="button large">View Project</a></li>
-									<li><a href="https://public.tableau.com/app/profile/isaque.couto" class="button large">Tableau Dashboard</a></li>
-								</ul>
-							</article>
+  /* ---------- manifest rows ---------- */
+  .manifest{border-top:1px solid var(--line-soft);}
+  .row{
+    display:grid; grid-template-columns:42px 1fr auto; gap:0 22px; align-items:start;
+    padding:22px 8px 22px 0; border-bottom:1px solid var(--line-soft);
+    text-decoration:none; color:inherit; position:relative; transition:padding-left .28s ease;
+  }
+  .row::before{
+    content:""; position:absolute; left:0; top:0; bottom:0; width:0;
+    background:rgba(255,171,61,.055); transition:width .28s ease; z-index:-1;
+  }
+  .row:hover{padding-left:14px;}
+  .row:hover::before{width:100%;}
+  .row:hover .r-title{color:var(--amber);}
+  .r-num{font:400 11.5px/1.9 var(--mono); color:var(--dim);}
+  .r-title{font-weight:600; font-size:17px; transition:color .22s ease; letter-spacing:-.005em;}
+  .r-desc{color:var(--muted); font-size:14.5px; margin-top:3px; max-width:62ch;}
+  .r-tags{margin-top:9px; display:flex; flex-wrap:wrap; gap:6px;}
+  .tag{
+    font:400 10.5px/1 var(--mono); color:var(--dim); letter-spacing:.07em;
+    border:1px solid var(--line); padding:4px 7px; text-transform:uppercase;
+  }
+  .r-status{display:flex; flex-direction:column; align-items:flex-end; gap:6px; padding-top:2px;}
+  .badge{
+    font:500 10px/1 var(--mono); letter-spacing:.14em; text-transform:uppercase;
+    padding:5px 9px; border:1px solid var(--line); color:var(--muted); white-space:nowrap;
+  }
+  .badge.live{color:var(--live); border-color:rgba(125,216,138,.34);}
+  .badge.live::before{
+    content:"●"; font-size:7px; vertical-align:middle; margin-right:5px;
+  }
+  .badge.src{color:var(--dim);}
 
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/IsaqueCouto/R_Wine_dataCleaning-Exploration">Wine Project, Data Cleaning and Exploration</a></h2>
-									</header>
-									<a href="https://github.com/IsaqueCouto/R_Wine_dataCleaning-Exploration" class="i fit"><img src="images/wine.jpg" width="450" height="270"alt="" /></a>
-									<p>In this project using the programming language R. We took raw data and transformed it to make 
-										regression models and find the outcome of which region produced the most expensive wine,
-										and also if the year in which the wine was made had any effect on price. 
-									</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/IsaqueCouto/R_Wine_dataCleaning-Exploration" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/IsaqueCouto/SQL_Project">SQL Project<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/IsaqueCouto/SQL_Project" class="image fit"><img src="images/sql.jpg" width="450" height="270"alt="" /></a>
-									<p>This is a SQL project using MySQL we pulled data from multiple sources on a company to create an OLAP database.
-										By creating this database, we were able to more effectively use the company’s data to make calculations.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/IsaqueCouto/SQL_Project" class="button">View Project</a></li>
-									</ul>
+  /* ---------- credentials ---------- */
+  .grid2{display:grid; grid-template-columns:repeat(auto-fit,minmax(262px,1fr)); gap:26px;}
+  .card{border:1px solid var(--line-soft); padding:24px; background:var(--ink-2);}
+  .card h4{
+    font:500 11.5px/1 var(--mono); letter-spacing:.16em; text-transform:uppercase;
+    color:var(--amber); margin:0 0 14px;
+  }
+  .card ul{margin:0; padding-left:17px; color:var(--muted); font-size:14.5px;}
+  .card li{margin-bottom:6px;}
+  .card li::marker{color:var(--dim);}
+  .card p{margin:0; color:var(--muted); font-size:14.5px;}
+  .card strong{color:var(--cream); font-weight:600;}
 
+  /* ---------- metrics ---------- */
+  .metrics{display:grid; grid-template-columns:repeat(auto-fit,minmax(168px,1fr)); gap:1px; background:var(--line-soft); border:1px solid var(--line-soft); margin-top:30px;}
+  .metric{background:var(--ink); padding:24px 20px;}
+  .metric .n{font:400 clamp(28px,3.6vw,38px)/1 var(--serif); color:var(--amber);}
+  .metric .l{font:400 11px/1.45 var(--mono); color:var(--muted); margin-top:8px; letter-spacing:.06em;}
 
-							</section>
+  /* ---------- footer ---------- */
+  footer{padding:76px 0 60px; border-top:1px solid var(--line-soft);}
+  footer h2{font:400 clamp(30px,5vw,46px)/1.08 var(--serif); margin:0 0 26px;}
+  .links{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:44px;}
+  .links a{
+    font:500 12px/1 var(--mono); letter-spacing:.1em; text-transform:uppercase;
+    color:var(--cream); text-decoration:none; border:1px solid var(--line);
+    padding:13px 19px; transition:all .22s ease;
+  }
+  .links a:hover{border-color:var(--amber); color:var(--amber); background:rgba(255,171,61,.05);}
+  .colophon{font:400 11.5px/1.7 var(--mono); color:var(--dim);}
 
-				<!-- Footer -->
+  /* ---------- entrance ---------- */
+  .rise{opacity:0; transform:translateY(16px); animation:rise .78s cubic-bezier(.2,.7,.3,1) forwards;}
+  @keyframes rise{to{opacity:1; transform:none;}}
+  .d1{animation-delay:.05s} .d2{animation-delay:.14s} .d3{animation-delay:.23s}
+  .d4{animation-delay:.32s} .d5{animation-delay:.41s}
 
-						<section class="split contact">
-							<section class="alt">
-								<h3>Location</h3>
-								<p>Toronto, Ontario</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">+1(416) 625 6960</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">Isaquecouto30@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
+  /* Hidden only once JS has confirmed it can reveal them again. Without the .js
+     guard a script failure leaves most of the page invisible. */
+  .reveal{transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1);}
+  .js .reveal{opacity:0; transform:translateY(20px);}
+  .js .reveal.in{opacity:1; transform:none;}
 
-									<li><a href="https://www.linkedin.com/in/isaque-couto-1aa018250/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-									<li><a href="https://github.com/IsaqueCouto" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
+  @media (prefers-reduced-motion:reduce){
+    .rise,.reveal{animation:none!important; transition:none!important; opacity:1!important; transform:none!important;}
+    html{scroll-behavior:auto;}
+  }
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
+  @media (max-width:680px){
+    .wrap{padding:0 20px;}
+    header.hero{min-height:auto; padding:72px 0 52px;}
+    .row{grid-template-columns:30px 1fr; gap:0 14px;}
+    .r-status{grid-column:2; flex-direction:row; align-items:center; margin-top:11px;}
+    section{padding:58px 0;}
+    .featured{padding:28px 22px;}
+  }
+</style>
+</head>
+<body>
 
-			</div>
+<div class="wrap">
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+  <header class="hero">
+    <div class="eyebrow rise d1">Balneário Camboriú · Brazil</div>
+    <h1 class="rise d2">Isaque<br>Couto<em>.</em></h1>
+    <p class="lede rise d3">
+      I build the systems businesses run on — <b>integrations, CRMs, data pipelines
+      and AI automation</b>. Head of IT at a Brazilian non-profit, and founder of
+      AIA Solutions.
+    </p>
+    <div class="facts rise d4">
+      <span>Growth &amp; Revenue Operations</span>
+      <span>AI Automation</span>
+      <span>Data Analytics</span>
+      <span>Native English &amp; Portuguese</span>
+    </div>
+  </header>
 
-	</body>
+  <!-- 01 AIA -->
+  <section>
+    <div class="sec-head reveal">
+      <div class="sec-num">01</div>
+      <h2>Company</h2>
+    </div>
+    <div class="featured reveal">
+      <div class="role">Founder</div>
+      <h3>AIA Solutions</h3>
+      <p>
+        Automação com IA &amp; Desenvolvimento. I help businesses automate the work
+        that eats their week — AI solutions, custom development and consulting,
+        built around what a company already does rather than around the tool.
+      </p>
+      <div class="manifest" style="border-top:1px solid var(--line)">
+        <a class="row" href="https://aia-solutions.vercel.app" target="_blank" rel="noopener">
+          <div class="r-num">/01</div>
+          <div>
+            <div class="r-title">AIA Solutions</div>
+            <div class="r-desc">Company site — AI automation, development and consulting for business.</div>
+          </div>
+          <div class="r-status"><span class="badge live">Live</span></div>
+        </a>
+        <a class="row" href="https://aia-landing-generator.vercel.app" target="_blank" rel="noopener">
+          <div class="r-num">/02</div>
+          <div>
+            <div class="r-title">Landing Page Generator</div>
+            <div class="r-desc">Internal tool that generates client landing pages from a brief.</div>
+            <div class="r-tags"><span class="tag">Next.js</span><span class="tag">AI</span></div>
+          </div>
+          <div class="r-status"><span class="badge live">Live</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 Senders -->
+  <section>
+    <div class="sec-head reveal">
+      <div class="sec-num">02</div>
+      <h2>Head of IT — Instituto Senders</h2>
+      <p>A non-profit serving children and families in Santa Catarina. I own the
+         website, integrations, data and reporting.</p>
+    </div>
+
+    <div class="grid2 reveal">
+      <div class="card">
+        <h4>Built</h4>
+        <ul>
+          <li>The organisation's website, <strong>sendersglobal.org</strong></li>
+          <li>An in-house CRM tracking donors, incoming donations and goods distributed to families</li>
+          <li>WhatsApp Business Cloud API integration, end to end</li>
+          <li>Python tooling and AI automations for extraction, validation and reporting</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Also responsible for</h4>
+        <ul>
+          <li>Meta Ads campaigns, from planning to creative and policy review</li>
+          <li>Message template classification under Meta's content policy</li>
+          <li>LGPD compliance, parental consent and student records</li>
+          <li>Editais and Lei Rouanet submissions</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="metrics reveal">
+      <div class="metric"><div class="n">56,835</div><div class="l">messages migrated<br>and verified</div></div>
+      <div class="metric"><div class="n">17,189</div><div class="l">media files,<br>record by record</div></div>
+      <div class="metric"><div class="n">0</div><div class="l">records lost<br>in migration</div></div>
+      <div class="metric"><div class="n">16</div><div class="l">files a simpler count<br>reported as complete</div></div>
+    </div>
+  </section>
+
+  <!-- 03 Products -->
+  <section>
+    <div class="sec-head reveal">
+      <div class="sec-num">03</div>
+      <h2>Products</h2>
+      <p>Things I built because I wanted them to exist.</p>
+    </div>
+    <div class="manifest reveal">
+      <a class="row" href="https://web-dun-one-10.vercel.app" target="_blank" rel="noopener">
+        <div class="r-num">/01</div>
+        <div>
+          <div class="r-title">Telos</div>
+          <div class="r-desc">Read the whole Bible in nine months. The text is divided into daily
+            portions, so there is always a defined next thing to read and a way to tell
+            whether you're behind. Accounts, progress tracking and push reminders.</div>
+          <div class="r-tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">Web Push</span></div>
+        </div>
+        <div class="r-status"><span class="badge live">Live</span><span class="badge src">Source</span></div>
+      </a>
+      <a class="row" href="https://enhance-pictures-app.vercel.app" target="_blank" rel="noopener">
+        <div class="r-num">/02</div>
+        <div>
+          <div class="r-title">Enhance</div>
+          <div class="r-desc">AI image upscaler. Takes a blurry or low-resolution photo and returns
+            it at roughly four times the dimensions, with optional face enhancement.</div>
+          <div class="r-tags"><span class="tag">Next.js</span><span class="tag">AI</span><span class="tag">Vercel</span></div>
+        </div>
+        <div class="r-status"><span class="badge live">Live</span><span class="badge src">Source</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 04 Teaching -->
+  <section>
+    <div class="sec-head reveal">
+      <div class="sec-num">04</div>
+      <h2>A course, in two halves</h2>
+      <p>I teach English part time. Rather than assemble worksheets each week, I built
+         the curriculum — a student site and a teacher's guide that runs alongside it.</p>
+    </div>
+    <div class="manifest reveal">
+      <a class="row" href="https://isaquecouto.github.io/english-course/" target="_blank" rel="noopener">
+        <div class="r-num">/01</div>
+        <div>
+          <div class="r-title">My English Course — student</div>
+          <div class="r-desc">Bilingual English/Portuguese, written for Brazilian learners.
+            18 lessons in Stage 1, each with its own sheet, plus a progress tracker.</div>
+          <div class="r-tags"><span class="tag">18 lessons</span><span class="tag">EN / PT</span></div>
+        </div>
+        <div class="r-status"><span class="badge live">Live</span><span class="badge src">Source</span></div>
+      </a>
+      <a class="row" href="https://isaquecouto.github.io/english-course-teacher/" target="_blank" rel="noopener">
+        <div class="r-num">/02</div>
+        <div>
+          <div class="r-title">English Course — teacher</div>
+          <div class="r-desc">A lesson plan paired with every student sheet, so an hour can be
+            taught with no preparation. Curriculum map, placement check and IELTS material.
+            43 pages.</div>
+          <div class="r-tags"><span class="tag">43 pages</span><span class="tag">IELTS</span></div>
+        </div>
+        <div class="r-status"><span class="badge live">Live</span><span class="badge src">Source</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 05 Client sites -->
+  <section>
+    <div class="sec-head reveal">
+      <div class="sec-num">05</div>
+      <h2>Sites for other people</h2>
+    </div>
+    <div class="manifest reveal">
+      <a class="row" href="https://sendersglobal.org" target="_blank" rel="noopener">
+        <div class="r-num">/01</div>
+        <div>
+          <div class="r-title">Instituto Senders</div>
+          <div class="r-desc">Full site for the non-profit, including the privacy documentation
+            required of an organisation working with children.</div>
+          <div class="r-tags"><span class="tag">WordPress</span><span class="tag">Elementor</span></div>
+        </div>
+        <div class="r-status"><span class="badge live">Live</span></div>
+      </a>
+      <a class="row" href="https://vitalize-estetica.vercel.app" target="_blank" rel="noopener">
+        <div class="r-num">/02</div>
+        <div>
+          <div class="r-title">Vitalize Estética</div>
+          <div class="r-desc">Site for an aesthetics clinic.</div>
+        </div>
+        <div class="r-status"><span class="badge live">Live</span></div>
+      </a>
+      <a class="row" href="https://festacraft.vercel.app" target="_blank" rel="noopener">
+        <div class="r-num">/03</div>
+        <div>
+          <div class="r-title">FestaCraft Studio</div>
+          <div class="r-desc">Storefront for a party design catalogue.</div>
+        </div>
+        <div class="r-status"><span class="badge live">Live</span></div>
+      </a>
+      <a class="row" href="https://github.com/IsaqueCouto/culturacristabrasil" target="_blank" rel="noopener">
+        <div class="r-num">/04</div>
+        <div>
+          <div class="r-title">Cultura Cristã Brasil</div>
+          <div class="r-desc">Website built for a Christian non-profit organisation.</div>
+        </div>
+        <div class="r-status"><span class="badge src">Source</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 06 Data -->
+  <section>
+    <div class="sec-head reveal">
+      <div class="sec-num">06</div>
+      <h2>Data &amp; analytics</h2>
+      <p>From the Data Analytics diploma at Toronto School of Management, Canada.</p>
+    </div>
+    <div class="manifest reveal">
+      <a class="row" href="https://github.com/IsaqueCouto/SQL_Project" target="_blank" rel="noopener">
+        <div class="r-num">/01</div>
+        <div>
+          <div class="r-title">HR database from three sources</div>
+          <div class="r-desc">A normalised MySQL schema — eight related tables — assembled from a
+            CSV, an Excel workbook and a JSON file that did not agree with each other.</div>
+          <div class="r-tags"><span class="tag">MySQL</span><span class="tag">Data modelling</span></div>
+        </div>
+        <div class="r-status"><span class="badge src">Source</span></div>
+      </a>
+      <a class="row" href="https://github.com/IsaqueCouto/WebScrapping_Portual_Rent" target="_blank" rel="noopener">
+        <div class="r-num">/02</div>
+        <div>
+          <div class="r-title">Portuguese rental market scrape</div>
+          <div class="r-desc">Scraped 1,819 property listings from Imovirtual, cleaned them into a
+            structured dataset of price, area, rooms and region, then queried it in SQL.</div>
+          <div class="r-tags"><span class="tag">Python</span><span class="tag">BeautifulSoup</span><span class="tag">Pandas</span><span class="tag">SQL</span></div>
+        </div>
+        <div class="r-status"><span class="badge src">Source</span></div>
+      </a>
+      <a class="row" href="https://github.com/IsaqueCouto/R_Wine_dataCleaning-Exploration" target="_blank" rel="noopener">
+        <div class="r-num">/03</div>
+        <div>
+          <div class="r-title">Wine dataset — cleaning and exploration</div>
+          <div class="r-desc">Cleaning, transformation and exploratory analysis in R.</div>
+          <div class="r-tags"><span class="tag">R</span></div>
+        </div>
+        <div class="r-status"><span class="badge src">Source</span></div>
+      </a>
+      <a class="row" href="https://github.com/IsaqueCouto/Power_Bi_PhoneCompany" target="_blank" rel="noopener">
+        <div class="r-num">/04</div>
+        <div>
+          <div class="r-title">Telecom dashboards</div>
+          <div class="r-desc">Five Power BI dashboards built over a phone company's operating data.</div>
+          <div class="r-tags"><span class="tag">Power BI</span></div>
+        </div>
+        <div class="r-status"><span class="badge src">Source</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 07 Stack -->
+  <section>
+    <div class="sec-head reveal">
+      <div class="sec-num">07</div>
+      <h2>Stack</h2>
+    </div>
+    <div class="grid2 reveal">
+      <div class="card"><h4>Languages</h4><p>Python · SQL · R · TypeScript · HTML &amp; CSS</p></div>
+      <div class="card"><h4>Data</h4><p>Pandas · Tableau · Power BI · Advanced Excel · cleaning, validation, integrity verification</p></div>
+      <div class="card"><h4>Platforms</h4><p>WhatsApp Business Cloud API · Meta Business Suite &amp; Ads · Monday CRM · Supabase · Vercel · Google Workspace</p></div>
+      <div class="card"><h4>AI</h4><p>Claude Code · LLM-based development · process automation · AI consulting</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <h2>Let's talk.</h2>
+    <div class="links">
+      <a href="mailto:isaquecouto30@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/isaque-couto-1aa018250/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/IsaqueCouto" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://aia-solutions.vercel.app" target="_blank" rel="noopener">AIA Solutions</a>
+    </div>
+    <div class="colophon">
+      Balneário Camboriú, Santa Catarina, Brazil — open to remote work.<br>
+      Native English and Portuguese.
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
 </html>
